@@ -4,6 +4,6 @@ export interface UserModel {
     email: string;
     password: number;
     pictureUrl: string | null;
-    created_at: Date;
-    updated_at: Date;
+    createdAt: Date;
+    updatedAt: Date;
 }
