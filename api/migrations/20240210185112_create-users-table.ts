@@ -3,12 +3,19 @@ import type { Knex } from "knex";
 
 export async function up(knex: Knex): Promise<void> {
     //criar no banco de dados a tabela user
-    /*return knex.schema.createTable('users', (table) => {
-        table.uuid('userId')
-    });*/
+    return knex.schema.createTable('users', (table) => {
+        table.uuid('userId').primary();
+        table.string('name').notNullable();
+        table.string('email').notNullable();
+        table.text('password').notNullable();
+        table.timestamp('createdAt').defaultTo(knex.fn.now());
+        table.timestamp('updatedAt').notNullable();
+    });
 }
 
 
 export async function down(knex: Knex): Promise<void> {
+    //deletar a tabela user do banco de dados 
+    return knex.schema.dropTable('users');
 }
 
