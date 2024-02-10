@@ -5,7 +5,7 @@ const config: { [key: string]: Knex.Config } = {
         client: 'pg',
         connection: {
             host: 'localhost',
-            database: 'secretboxdb',
+            database: 'secretbox',
             user: 'postgres',
             password: 'postgres'
         },
@@ -17,7 +17,7 @@ const config: { [key: string]: Knex.Config } = {
         client: 'pg',
         connection: {
             host: 'localhost',
-            database: 'secretboxdb',
+            database: 'secretbox',
             user: 'postgres',
             password: 'postgres'
         },
@@ -26,3 +26,5 @@ const config: { [key: string]: Knex.Config } = {
         }
     },
 }
+
+export default config;

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "migration:make": "npx tsx ./node_modules/knex/bin/cli.js migrate:make",
-    "migration:latest": "npx tsx ./node_modules/.bin/knex migrate:latest",
-    "migration:rollback": "npx tsx ./node_modules/.bin/knex migrate:rollback"
+    "migration:latest": "npx tsx ./node_modules/knex/bin/cli.js migrate:latest",
+    "migration:rollback": "npx tsx ./node_modules/knex/bin/cli.js migrate:rollback"
   },
   "keywords": [],
   "author": "",
