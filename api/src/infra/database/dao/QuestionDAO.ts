@@ -1,16 +1,24 @@
+import { KnexTypeAdapter, DatabaseTableNames } from '@infra/database/KnexAdapter';
+import { QuestionModel } from '@domain/model';
 import DAO from "@domain/dao/DAO";
-import QuestionEntity from "@domain/entity/QuestionEntity";
 
-export default class QuestioDAO implements DAO<QuestionEntity> {
-    create(data: QuestionEntity): Promise<QuestionEntity> {
-        return new Promise((resolve, reject) => {
-            resolve(data);
-        });
+
+export default class QuestionDAO implements DAO<QuestionModel> {
+    private readonly tableName: string = DatabaseTableNames.QUESTIONS;
+    constructor(private readonly connection: KnexTypeAdapter) { }
+
+    async create(data: QuestionModel): Promise<QuestionModel> {
+        const [savedQuestion] = await this.connection<QuestionModel>(this.tableName)
+            .insert(data).returning('*');
+
+        return savedQuestion;
     }
 
-    findById(id: number): Promise<QuestionEntity> {
-        return new Promise((resolve, reject) => {
-            resolve(new QuestionEntity());
-        });
+    async findById(questionId: string): Promise<QuestionModel | null> {
+        const data = await this.connection<QuestionModel>(this.tableName)
+            .where({ questionId }).first();
+
+        if (!data) return null;
+        return data;
     }
 }

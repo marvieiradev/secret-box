@@ -1,16 +1,24 @@
+import { KnexTypeAdapter, DatabaseTableNames } from '@infra/database/KnexAdapter';
+import { AnswerModel } from '@domain/model';
 import DAO from "@domain/dao/DAO";
-import AnswerEntity from "@domain/entity/AnswerEntity";
 
-export default class AnswerDAO implements DAO<AnswerEntity> {
-    create(data: AnswerEntity): Promise<AnswerEntity> {
-        return new Promise((resolve, reject) => {
-            resolve(data);
-        });
+
+export default class AnswerDAO implements DAO<AnswerModel> {
+    private readonly tableName: string = DatabaseTableNames.ANSWERS;
+    constructor(private readonly connection: KnexTypeAdapter) { }
+
+    async create(data: AnswerModel): Promise<AnswerModel> {
+        const [savedAnswer] = await this.connection<AnswerModel>(this.tableName)
+            .insert(data).returning('*');
+
+        return savedAnswer;
     }
 
-    findById(id: number): Promise<AnswerEntity> {
-        return new Promise((resolve, reject) => {
-            resolve(new AnswerEntity());
-        });
+    async findById(answerId: string): Promise<AnswerModel | null> {
+        const data = await this.connection<AnswerModel>(this.tableName)
+            .where({ answerId }).first();
+
+        if (!data) return null;
+        return data;
     }
 }
