@@ -48,4 +48,4 @@ export enum DatabaseTableNames {
     USERS = 'users',
 }
 
-type KnexTypeAdapter = KnexType<DatabaseTables>;
+export type KnexTypeAdapter = KnexType<DatabaseTables>;
