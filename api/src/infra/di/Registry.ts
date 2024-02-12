@@ -18,4 +18,4 @@ export default class Registry {
 }
 
 
-type RegistryKeys = "AswerRepository" | "QuestionRepository" | "UserRepository"
+type RegistryKeys = "AnswerRepository" | "QuestionRepository" | "UserRepository"
