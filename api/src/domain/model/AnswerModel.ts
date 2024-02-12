@@ -3,6 +3,6 @@ export interface AnswerModel {
     questionId: string;
     userId: string | null;
     answer: string;
-    created_at: Date;
-    updated_at: Date | null;
+    createdAt: Date;
+    updatedAt: Date | null;
 }
