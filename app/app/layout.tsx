@@ -3,7 +3,7 @@ import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
 
-const exo2 = Exo_2({ subsets: ["latin"], display: 'swap', weight: ['400', '500', '600', '700'], variable: '--font-exo2' });
+const exo2 = Exo_2({ subsets: ["latin"], display: 'swap', weight: ['400', '500', '600', '700', '800'], variable: '--font-exo2' });
 
 export const metadata: Metadata = {
   title: "Secret Box",
@@ -18,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={exo2.variable}>
-        <div className="container flex flex-col items-center mx-auto max-w-sm bg-lime-200 p-4 m-4 rounded">
-          { /* <Header />*/}
-          {children}
+        <div className="backgroundGradient">
+          <div className="container flex flex-col items-center mx-auto max-w-sm p-4 m-4">
+            { /* <Header />*/}
+            {children}
+          </div>
         </div>
       </body>
     </html>

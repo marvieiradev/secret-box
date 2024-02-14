@@ -8,7 +8,7 @@ export default function DashPage() {
                     <span>Imagem</span>
                     <p>pergunta1</p>
                     <span>...</span>
-                    <button>criar e copiar link</button>
+                    <button className="button">criar e copiar link</button>
                 </div>
             </div>
             <p>toque aqui para gerar o link</p>

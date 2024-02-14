@@ -1,10 +1,14 @@
+import Header from "@/app/components/header";
+
 export default function NewAccountPage() {
     return (
-        <div>
-            <h1>New Account</h1>
-            <p>perguntas e menságens anônimas</p>
-            <FormEmail />
-        </div>
+        <>
+            <Header />
+            <h1 className="mb-[60px]">perguntas e mensagens anônimas</h1>
+            <form className="w-full" action="">
+                <FormEmail />
+            </form>
+        </>
     );
 }
 
@@ -12,7 +16,8 @@ function FormEmail() {
     return (
         <>
             <input type="text" placeholder="informe seu email" />
-            <button>continuar</button>
+            <button className="button">continuar</button>
+            <a href="/" className="button-secondary">voltar</a>
         </>
     );
 }
@@ -21,7 +26,8 @@ function FormPassword() {
     return (
         <>
             <input type="text" placeholder="informe sua senha" />
-            <button>continuar</button>
+            <button className="button">continuar</button>
+            <a href="/" className="button-secondary">voltar</a>
         </>
     );
 }
@@ -31,7 +37,8 @@ function FormProfile() {
         <>
             <input type="text" placeholder="informe seu nome" />
             <input type="text" placeholder="informe seu usuário" />
-            <button>continuar</button>
+            <button className="button">continuar</button>
+            <a href="/" className="button-secondary">voltar</a>
         </>
     );
 }
