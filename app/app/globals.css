@@ -13,7 +13,7 @@
     --secondary: #FFFFFF;
     --secondary-dark: #a56273;
     /*--secondary-foreground: 0 0% 100%;*/
-    --gray: #a0a0a0;
+    --gray: #adadad;
     --gray-light: #E1E1E1;
     --gray-dark: #7e7e7e;
     /*--background: 0 0% 4%;
@@ -71,7 +71,7 @@ body {
 button[type='submit'],
 .button,
 .button-secondary {
-  @apply flex items-center justify-center w-full mb-[15px];
+  @apply flex items-center justify-center w-full;
   @apply font-semibold text-[14px] leading-[14px] rounded-[14px] p-[20px] uppercase;
   @apply hover:opacity-90 active:opacity-100 focus:outline-none;
 }
@@ -94,11 +94,24 @@ input[type='text'],
 input[type='email'],
 input[type='password'] {
   @apply w-full bg-white border-0 ring-[--dark-light] ring-inset ring-2;
-  @apply p-[15px] rounded-[12px] placeholder-[--gray] opacity-80 mb-[15px];
+  @apply p-[15px] rounded-[12px] placeholder-[--gray];
   @apply focus:ring-2 focus:ring-[--primary-light] focus:outline-none;
 }
 
 h1,
 .title {
   @apply font-semibold text-[18px] leading-[18px];
+}
+
+.inputGroup {
+  @apply relative w-full
+}
+
+.inputGroup input[type='text'] {
+  @apply pl-[35px];
+}
+
+.inputGroup span {
+  @apply absolute top-1/2 left-[15px] transform -translate-y-1/2;
+  @apply text-[18px] text-[--gray];
 }

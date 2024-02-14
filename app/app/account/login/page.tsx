@@ -5,7 +5,7 @@ export default function LoginPage() {
         <>
             <Header />
             <h1 className="mb-[60px]">perguntas e mensagens anônimas</h1>
-            <form className="w-full" action="">
+            <form className="w-full space-y-4" action="">
                 <input type="text" placeholder="informe seu email" />
                 <input type="password" placeholder="informe sua senha" />
                 <button className="button" type="submit">acessar minha conta</button>
