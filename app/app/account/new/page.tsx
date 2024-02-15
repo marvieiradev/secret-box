@@ -20,7 +20,7 @@ export default function NewAccountPage() {
                 {step == 2 && <FormPassword updateStep={updateStep} />}
                 {step == 3 && <FormProfile updateStep={updateStep} />}
             </form>
-            <Image src={`/step/step-${step}.svg`} alt="" width={50} height={20} />
+            <Image src={`/step/step-${step}.svg`} alt="" width={50} height={20} className="mt-[20px]" />
         </>
     );
 }

@@ -1,8 +1,10 @@
 import Card from "@/app/components/card";
+import Nav from "@/app/components/nav";
 
 export default function MessagesPage() {
     return (
         <>
+            <Nav bt1={false} bt2={true} bt3={false} />
             <h1>sua caixa secreta</h1>
             <ul>
                 <li>

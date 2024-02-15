@@ -1,0 +1,7 @@
+.navButtonActive {
+    @apply flex bg-[--primary] text-[--secondary] rounded-[14px] text-[14px] p-3 gap-1 items-center;
+}
+
+.navButtonInactive {
+    @apply flex bg-white text-[--gray] rounded-[14px] text-[14px] p-3 gap-1 items-center;
+}
